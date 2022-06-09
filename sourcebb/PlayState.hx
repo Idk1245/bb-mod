@@ -877,8 +877,8 @@ class PlayState extends MusicBeatState
 		scoreTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
                 #if android
-	        addAndroidControls();
-	#end
+	        addHitbox();
+	        #end
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
 		// UI_camera.zoom = 1;
@@ -1158,7 +1158,7 @@ class PlayState extends MusicBeatState
 
 	function startCountdown():Void
 	{       #if android
-	        androidc.visible = true;
+	        _hitbox.visible = true;
 	        #end
 		inCutscene = false;
 
