@@ -30,6 +30,9 @@ class OutdatedSubState extends MusicBeatState
 			txt.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
 			txt.screenCenter();
 			add(txt);
+			#if android
+                        addVirtualPad(NONE, A);
+                        #end
 		}
 		else
 		{
