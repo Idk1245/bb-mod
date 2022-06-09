@@ -1,5 +1,5 @@
+#if newgrounds 
 package;
-
 import flixel.FlxG;
 import flixel.util.FlxSignal;
 import flixel.util.FlxTimer;
@@ -195,5 +195,7 @@ class NGio
 			if (!medal.unlocked)
 				medal.sendUnlock();
 		}
+	
 	}
 }
+#end
