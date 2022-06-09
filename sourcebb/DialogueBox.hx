@@ -343,7 +343,18 @@ class DialogueBox extends FlxSpriteGroup
 			startDialogue();
 			dialogueStarted = true;
 		}
-		
+		#if mobile
+		var justTouched:Bool = false;
+
+		for (touch in FlxG.touches.list)
+		{
+			justTouched = false;
+			
+			if (touch.justReleased){
+				justTouched = true;
+			}
+		}
+		#end
 		//gwebdev = shit lol
 		
 		/*if (Math.isNaN(toFade))
@@ -439,7 +450,7 @@ class DialogueBox extends FlxSpriteGroup
 		whitelisted = ['pause', 'hidebox', 'showbox', 'chromeoffset', 'soundoverwritestop', 'musicstop', 'music', 'musicloop', 'soundoverwrite', 'sound', 'class', 'class-use', 'bg', 'bghide', 'makeGraphic', 'enableTypeSound', 'disableTypeSound', 'switchSound', 'fadeIn', 'fadeOut'];
 
 		//if ((FlxG.keys.justPressed.ANY) || (dialogueList.length > 0 && whitelisted.contains(curCharacter)) && dialogueStarted == true && !paused && !isFade)
-		if ((controls.ACCEPT) || (dialogueList.length > 0 && whitelisted.contains(curCharacter)) && dialogueStarted == true && !paused && !isFade)
+		if (FlxG.keys.justPressed.ANY #if mobile || justTouched #end && dialogueStarted == true)
 		{
 			var queuePause:Bool = false;
 			queueFade = false;
