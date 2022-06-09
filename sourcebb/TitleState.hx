@@ -297,7 +297,7 @@ class TitleState extends MusicBeatState
 
 				var version:String = "v" + Application.current.meta.get('version');
                                 
-				#if newgrounds 
+				/*#if newgrounds 
 				if (version.trim() != NGio.GAME_VER_NUMS.trim() && !OutdatedSubState.leftState)
 				{
 					FlxG.switchState(new OutdatedSubState());
@@ -321,10 +321,10 @@ class TitleState extends MusicBeatState
 			skipIntro();
 		}
 
-		super.update(elapsed);
+		super.update(elapsed);*/
 	}
 	
-        #end
+        
 	function createCoolText(textArray:Array<String>)
 	{
 		for (i in 0...textArray.length)
