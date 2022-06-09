@@ -297,8 +297,8 @@ class TitleState extends MusicBeatState
 
 				var version:String = "v" + Application.current.meta.get('version');
                                 
-				#if newgrounds 
-				if (version.trim() != NGio.GAME_VER_NUMS.trim() && !OutdatedSubState.leftState)
+				
+				/*if (version.trim() != NGio.GAME_VER_NUMS.trim() && !OutdatedSubState.leftState)
 				{
 					FlxG.switchState(new OutdatedSubState());
 					trace('OLD VERSION!');
@@ -306,13 +306,13 @@ class TitleState extends MusicBeatState
 					trace(version.trim());
 					trace('cur ver');
 					trace(NGio.GAME_VER_NUMS.trim());
-					#end
+					
 				}
 				else
 				{
 					FlxG.switchState(new MainMenuState());
 				}
-			});
+			});*/
 			// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
 		}
                 
