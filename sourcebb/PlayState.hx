@@ -876,7 +876,9 @@ class PlayState extends MusicBeatState
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
-
+                #if android
+	        addAndroidControls();
+	#end
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
 		// UI_camera.zoom = 1;
@@ -1155,7 +1157,9 @@ class PlayState extends MusicBeatState
 	var perfectMode:Bool = false;
 
 	function startCountdown():Void
-	{
+	{       #if android
+	        androidc.visible = true;
+	        #end
 		inCutscene = false;
 
 		generateStaticArrows(0);
@@ -2212,9 +2216,10 @@ class PlayState extends MusicBeatState
 				// if ()
 				StoryMenuState.weekUnlocked[Std.int(Math.min(storyWeek + 1, StoryMenuState.weekUnlocked.length - 1))] = true;
 				if (SONG.validScore)
-				{
+				{       #if newgrounds
 					NGio.unlockMedal(60961);
 					Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
+				        #end
 				}
 				FlxG.save.data.weekUnlocked = StoryMenuState.weekUnlocked;
 				FlxG.save.flush();		
