@@ -59,8 +59,9 @@ class TitleState extends MusicBeatState
 		// DEBUG BULLSHIT
 
 		super.create();
-
+                #if newgrounds
 		NGio.noLogin(APIStuff.API);
+		#end
 
 		#if ng
 		var ng:NGio = new NGio(APIStuff.API, APIStuff.EncKey);
